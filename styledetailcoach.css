@@ -1,0 +1,1151 @@
+    body {
+        background-color: #252525;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    header {
+        background-color: #121212;
+        width: 100%;
+        color: #ffffff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        width: 95%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+
+    .logo {
+        width: 62px;
+        height: 62px;
+        background-image: url('/image/logoori.gif');
+        background-size: cover;
+        flex-shrink: 0;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .textlogo {
+        font-weight: bold;
+        font-size: 18px;
+        font-family: system-ui, sans-serif;
+        line-height: 1.2;
+        margin: 0;
+        color: #ffffff;
+    }
+
+
+    .burger-label {
+        display: none;
+        cursor: pointer;
+        user-select: none;
+        flex-shrink: 0;
+    }
+
+    .burger-open,
+    .burger-close {
+        font-size: 28px;
+        color: #FFD700;
+        line-height: 1;
+    }
+
+    /* Par défaut : on montre ☰, on cache ✕ */
+    .burger-close {
+        display: none;
+    }
+
+    /* Quand le burger est coché : on inverse */
+    #burger:checked~.menu .burger-close {
+        display: inline;
+    }
+
+    #burger:checked~.menu .burger-open {
+        display: none;
+    }
+
+
+    #burger {
+        display: none;
+    }
+
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .UN {
+        margin: 0;
+    }
+
+    .nav {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav li {
+        list-style: none;
+    }
+
+    .textnav {
+        font-size: 18px;
+        white-space: nowrap;
+        text-decoration: none;
+        color: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .textnav:hover {
+        color: #FFD700;
+    }
+
+    /* =============================================
+    BOUTON INSCRIPTION (header)
+    ============================================= */
+    .btn {
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-weight: bold;
+        background-color: #FFD700;
+        color: #000000;
+        width: 110px;
+        height: 38px;
+        cursor: pointer;
+        border: none;
+        font-size: 15px;
+        font-family: system-ui, sans-serif;
+    }
+
+    .btn:hover {
+        background-color: #222222;
+        color: #FFD700;
+    }
+
+
+    @media (max-width: 768px) {
+    /* 1. On force l'affichage du label (le bouton) */
+    .burger-label {
+        display: block; 
+        order: 2; /* Pour le placer à droite si besoin */
+    }
+
+    /* 2. On cache les liens par défaut */
+    .nav-actions {
+        display: none; 
+        position: absolute;
+        top: 70px; /* Juste en dessous du header */
+        left: 0;
+        width: 100%;
+        background-color: #121212;
+        flex-direction: column;
+        padding: 20px 0;
+        border-bottom: 2px solid #FFD700;
+        z-index: 999;
+    }
+
+    /* 3. LA LOGIQUE MAGIQUE : Si la checkbox #burger est cochée */
+    #burger:checked ~ .menu .nav-actions {
+        display: flex;
+    }
+
+    /* 4. On empile les liens verticalement */
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 5. On ajuste la structure de la page pour mobile */
+    .parentI {
+        flex-direction: column;
+    }
+    .cadre, .lesinfos {
+        width: 100%;
+        position: static; /* Le sticky ne marche pas bien sur mobile ici */
+    }
+}
+
+
+/* text et arrow */
+.textarrow {
+    margin-top: 95px;
+    color: #ffffff;
+    margin-left: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.arrow {
+    color: #FFD700;
+    margin-right: 10px;
+}
+
+/* parent des infos */
+.parentI {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.cadre {
+    width: 30%;
+    min-height: 800px;
+    border: 2px solid #FFD700;
+    background-color: #121212;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 2px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90px;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cadre:hover {
+    transform: scale(1.01);
+    box-shadow: -2px 3px 13px -3px #FFD700;
+}
+
+/* photo */
+.photo {
+    width: 95%;
+    height: 600px;
+    margin-top: 10px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.photo66 {
+    border: 3px solid #424242;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+/* les icones sociales */
+.lin {
+    font-size: 40px;
+    color: #FFD700;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.ins {
+    font-size: 40px;
+    color: #FFD700;
+    margin-left: 7px;
+    margin-top: 30px;
+}
+
+.fac {
+    font-size: 40px;
+    color: #FFD700;
+    margin-left: 7px;
+    margin-top: 30px;
+}
+
+.twi {
+    font-size: 40px;
+    color: #FFD700;
+    margin-left: 7px;
+    margin-top: 30px;
+}
+
+/* infos du coach */
+.lesinfos {
+    width: 66%;
+    min-height: 1500px;
+    border: 2px solid #4f4f4f;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 2px;
+    background-color: #121212;
+}
+
+/* biographie */
+.Biographie {
+    color: #FFD700;
+    font-size: 25px;
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.paragrapheBio {
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 40px;
+}
+
+.bio {
+    width: 95%;
+    height: 270px;
+    border: 2px solid #FFD700;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.bio2 {
+    width: 95%;
+    height: 200px;
+    border: 2px solid #FFD700;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.cert {
+    margin-left: 20px;
+    margin-top: 30px;
+    color: #fff3b2;
+    font-size: 25px;
+}
+
+.texticone {
+    color: #FFD700;
+    font-size: 20px;
+    margin-left: 9px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.Li {
+    width: 95%;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Textcertification {
+    width: 45%;
+    height: 100px;
+}
+
+.T {
+    color: #ffffff;
+    margin-top: 30px;
+    margin-left: 20px;
+    line-height: 9px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+/* partie horaire */
+.bio3 {
+    width: 95%;
+    height: 230px;
+    border: 2px solid #FFD700;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.clen {
+    margin-left: 20px;
+    margin-top: 30px;
+    color: #fff3b2;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.texticone2 {
+    color: #FFD700;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 9px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.parentcadre {
+    width: 90%;
+    height: 130px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cadreC {
+    width: 46%;
+    height: 40px;
+    border: 2px solid #5f5f5f;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+}
+
+.jj {
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.j {
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+/* video */
+.cert2 {
+    margin-left: 20px;
+    margin-top: 30px;
+    color: #fff3b2;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.texticoneV {
+    color: #FFD700;
+    font-size: 18px;
+    margin-left: 9px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.bio4 {
+    width: 95%;
+    height: 690px;
+    border: 2px solid #414141;
+    margin-left: 10px;
+    margin-top: 20px;
+    border-radius: 15px;
+    display: flex;
+}
+
+.bio5 {
+    width: 68%;
+    height: 460px;
+    border: 2px solid #FFD700;
+    margin-top: 110px;
+    margin-right: 49px;
+    border-radius: 15px;
+}
+
+.bio6 {
+    width: 68%;
+    height: 460px;
+    border: 2px solid #FFD700;
+    margin-right: 40px;
+    margin-top: 110px;
+    border-radius: 15px;
+}
+
+.photoA {
+    width: 95%;
+    height: 300px;
+    border: 2px solid #3b3b3b;
+    margin-top: 10px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.vid {
+    width: 349px;
+    border-radius: 20px;
+}
+
+.titrecoc {
+    color: #FFD700;
+    margin-left: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.soustitrecoc {
+    color: white;
+    margin-left: 16px;
+    font-size: 18px;
+    margin-top: -10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titrecoch {
+    color: #FFD700;
+    margin-left: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.soustitrecoach {
+    color: white;
+    margin-left: 10px;
+    font-size: 18px;
+    margin-top: -10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.parentsouscoach {
+    width: 170px;
+    height: 25px;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.titrecoche66 {
+    color: #FFD700;
+    margin-left: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.soustitrecoch66 {
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+    margin-top: -10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.photoB {
+    width: 95%;
+    height: 300px;
+    border: 2px solid #3c3c3c;
+    margin-top: 10px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.vid2 {
+    width: 349px;
+    border-radius: 20px;
+    height: 300px;
+}
+
+/* les buttons */
+.btnC1 {
+    background-color: #FFD700;
+    font-size: 20px;
+    margin-top: 9px;
+    padding: 7px;
+    width: 350px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnC1:hover {
+    background-color: #222222;
+    color: #FFD700;
+}
+
+.btnC2 {
+    background-color: #FFD700;
+    font-size: 20px;
+    margin-top: 1px;
+    padding: 7px;
+    width: 350px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnC2:hover {
+    background-color: #222222;
+    color: #FFD700;
+}
+
+/* restant coach */
+.coachrestant {
+    width: 100%;
+    height: 630px;
+    color: #FFD700;
+    margin-top: 29px;
+}
+
+.Parentcarte {
+    display: flex;
+    gap: 30px;
+    margin-top: 90px;
+    z-index: 1;
+}
+
+.carte {
+    width: 330px;
+    height: 660px;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    background-color: #111111;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0.3s ease-in-out;
+}
+
+.carte:hover {
+    transform: scale(1.03);
+    box-shadow: -2px 3px 13px -3px #FFD700;
+}
+
+.imag1 {
+    width: 300px;
+    height: 460px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.imag11 {
+    border: 3px solid #FFD700;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.titleP {
+    color: #FFD700;
+    margin-left: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.soustitleP {
+    color: #ffffff;
+    margin-left: 13px;
+    margin-top: -10px;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.image2 {
+    width: 300px;
+    height: 460px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 7.5px;
+}
+
+.image22 {
+    border: 3px solid #FFD700;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.image3 {
+    width: 300px;
+    height: 460px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 7.5px;
+}
+
+.image33 {
+    border: 3px solid #FFD700;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.image4 {
+    width: 300px;
+    height: 460px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 7.5px;
+}
+
+.image44 {
+    border: 3px solid #FFD700;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+/* footer */
+.foote {
+    width: 100%;
+    height: 70px;
+    background-color: #121212;
+    color: #FFD700;
+    margin-top: 59px;
+}
+
+.bodyfoot {
+    display: flex;
+    width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textcop {
+    font-size: 19px;
+}
+
+.cop {
+    margin-top: 10px;
+}
+
+.iconefoot {
+    margin-top: 19px;
+}
+
+.line {
+    font-size: 30px;
+    margin-top: -1px;
+    color: #FFD700;
+}
+
+.liennav {
+    list-style: none;
+}
+
+
+
+
+@media (max-width: 1400px) {
+    .menu {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .parentbody {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    .bodyfoot {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .Parentcarte {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .textnav {
+        font-size: 15px;
+    }
+
+    .nav {
+        gap: 12px;
+    }
+
+    .nav-actions {
+        gap: 20px;
+    }
+
+    /* Passage en colonne : cadre en haut, infos en dessous */
+    .parentI {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cadre {
+        width: 90%;
+        min-height: auto;
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .photo {
+        height: 450px;
+    }
+
+    .lesinfos {
+        width: 90%;
+        min-height: auto;
+    }
+
+    /* Vidéos en colonne */
+    .bio4 {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .bio5,
+    .bio6 {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+
+    .vid,
+    .vid2 {
+        width: 100%;
+        height: 250px;
+    }
+
+    .photoA,
+    .photoB {
+        height: auto;
+        margin-left: -5px;
+
+        width: 300px;
+
+   
+    }
+
+    .btnC1,
+    .btnC2 {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 17px;
+
+    }
+
+    /* Section coachs restants */
+    .coachrestant {
+        height: auto;
+    }
+
+    .Parentcarte {
+        margin-top: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .carte {
+        width: 45%;
+        height: auto;
+    }
+
+    .imag1,
+    .image2,
+    .image3,
+    .image4 {
+        width: 100%;
+        height: 390px;
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    /* Header : hamburger visible, nav cachée */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-actions {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #121212;
+        padding: 20px 0;
+        gap: 0;
+        z-index: 999;
+    }
+
+    .nav-actions.open {
+        display: flex;
+    }
+
+    .UN {
+        width: 100%;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .textnav {
+        font-size: 18px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Body */
+    .parentbody {
+        padding: 0 10px;
+    }
+
+    .textarrow {
+        margin-top: 85px;
+        font-size: 15px;
+    }
+
+    /* Carte coach principale */
+    .cadre {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .photo {
+        height: 350px;
+    }
+
+    .titrecoch {
+        font-size: 22px;
+    }
+
+    .lin,
+    .ins,
+    .fac,
+    .twi {
+        font-size: 32px;
+        margin-left: 15px;
+    }
+
+    /* Infos */
+    .lesinfos {
+        width: 100%;
+    }
+
+    .bio {
+        height: auto;
+        padding-bottom: 15px;
+        width: 90%;
+    }
+
+    .paragrapheBio {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .bio2 {
+        height: auto;
+        padding-bottom: 20px;
+        width: 90%;
+    }
+
+    .Li {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+    }
+
+    .Textcertification {
+        width: 100%;
+        height: auto;
+    }
+
+    .T {
+        font-size: 15px;
+        line-height: 20px;
+        margin-top: 10px;
+    }
+
+    /* Horaires */
+    .bio3 {
+        height: auto;
+        padding-bottom: 15px;
+        width: 90%;
+    }
+
+    .parentcadre {
+        height: auto;
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .cadreC {
+        width: 90%;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .jj,
+    .j {
+        font-size: 15px;
+    }
+
+    /* Vidéos */
+    .bio4 {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+        margin-left: 5px;
+        padding-bottom: 20px;
+    }
+
+    .bio5,
+    .bio6 {
+        width: 90%;
+        height: auto;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .vid,
+    .vid2 {
+        width: 100%;
+        height: 200px;
+    }
+
+    .titrecoc,
+    .titrecoche66 {
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .soustitrecoc,
+    .soustitrecoch66 {
+        font-size: 15px;
+        margin-left: 10px;
+    }
+
+    .btnC1,
+    .btnC2 {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .coachrestant {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .Parentcarte {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .carte {
+        width: 95%;
+        height: auto;
+    }
+
+    .imag1,
+    .image2,
+    .image3,
+    .image4 {
+        width: 95%;
+        height: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .foote {
+        height: auto;
+        padding: 15px 10px;
+        margin-top: 30px;
+    }
+
+    .bodyfoot {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .cop {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .textcop {
+        font-size: 14px;
+    }
+
+    .iconefoot {
+        margin-top: 5px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .textlogo {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .photo {
+        height: 280px;
+    }
+
+    .Biographie {
+        font-size: 20px;
+    }
+
+    .paragrapheBio {
+        font-size: 14px;
+    }
+
+    .cadreC {
+        width: 85%;
+    }
+
+    .jj,
+    .j {
+        font-size: 13px;
+    }
+
+    .vid,
+    .vid2 {
+        height: 180px;
+    }
+
+    .btnC1,
+    .btnC2 {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .textcop {
+        font-size: 12px;
+    }
+
+    .line {
+        font-size: 24px;
+    }
+}
