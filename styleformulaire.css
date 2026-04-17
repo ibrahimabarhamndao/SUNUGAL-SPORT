@@ -161,6 +161,11 @@ header {
 }
 
 
+
+.parentlien{
+    text-decoration: none;
+}
+
 .textarrow {
     color: #ffffff;
     margin-left: 10px;
