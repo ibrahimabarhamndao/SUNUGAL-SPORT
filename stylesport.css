@@ -1108,15 +1108,17 @@
         .textaccueil2,
         .textaccueil3,
         .textaccueil4 {
-            font-size: 38px;
+            font-size: 30px;
         }
 
         .soustextaccueil,
         .soustextaccueil2,
         .soustextaccueil3,
         .soustextaccueil4 {
-            font-size: 15px;
+     
             text-align: initial;
+            font-size: medium;
+          
             margin-right: 90px;
         }
 
@@ -1180,7 +1182,8 @@
         .soustextaccueil2,
         .soustextaccueil3,
         .soustextaccueil4 {
-            font-size: 14px;
+         
+            font-size: medium;
         }
 
         .btn2,
