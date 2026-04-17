@@ -91,9 +91,7 @@ header {
     display: none;
 }
 
-/* =============================================
-   NAV + BOUTON INSCRIPTION
-   ============================================= */
+/* NAV + BOUTON INSCRIPTION */
 .nav-actions {
     display: flex;
     align-items: center;
@@ -128,9 +126,9 @@ header {
     color: #FFD700;
 }
 
-/* =============================================
+/* 
    BOUTON INSCRIPTION (header)
-   ============================================= */
+    */
 .btn {
     border-radius: 10px;
     padding: 5px 10px;
