@@ -1406,9 +1406,17 @@
 /* Pour les mobiles (max-width: 768px) */
 @media (max-width: 768px) {
     .soustextaccueil, .soustextaccueil2, .soustextaccueil3, .soustextaccueil4 {
-        font-size: 1rem;
+        font-size: 0.75rem;
         margin-left: 0; /* On remet à zéro */
         padding: 0 15px;
         margin-left: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .soustextaccueil, .soustextaccueil2, .soustextaccueil3, .soustextaccueil4 {
+        font-size: 0.65rem;   /* ← encore plus petit */
+        padding: 0 8px;
+        margin-left: 0;
     }
 }
