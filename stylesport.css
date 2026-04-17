@@ -1417,6 +1417,6 @@
     .soustextaccueil, .soustextaccueil2, .soustextaccueil3, .soustextaccueil4 {
         font-size: 0.65rem;   /* ← encore plus petit */
         padding: 0 8px;
-        margin-left: 0;
+        margin-left: 90px;
     }
 }
