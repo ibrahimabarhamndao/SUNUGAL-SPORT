@@ -148,9 +148,9 @@ header {
     color: #FFD700;
 }
 
-/* =============================================
+/* 
    LARGEUR COMMUNE DES SECTIONS
-   ============================================= */
+    */
 .parentbody,
 .bodyfoot {
     width: 95%;
@@ -158,9 +158,9 @@ header {
     margin: 0 auto;
 }
 
-/* =============================================
+/* 
    BANNIÈRE ACCUEIL
-   ============================================= */
+   =*/
 .A {
     height: 530px;
     margin-top: 70px; /* hauteur du header fixe */
@@ -176,9 +176,9 @@ header {
     margin-right: auto;
 }
 
-/* =============================================
+/* 
    RETOUR AUX PROGRAMMES
-   ============================================= */
+    */
 .Parenttextretour {
     text-decoration: none;
     display: inline-block;
@@ -197,9 +197,9 @@ header {
     font-size: 20px;
 }
 
-/* =============================================
+/* 
    PARENT SECTIONS (Description + Horaire)
-   ============================================= */
+    */
 .parentDH {
     display: flex;
     justify-content: space-between;
@@ -207,9 +207,9 @@ header {
     margin-top: 30px;
 }
 
-/* =============================================
+/* 
    BLOC DESCRIPTION
-   ============================================= */
+    */
 .Description {
     width: 70%;
     min-height: 250px;
@@ -237,9 +237,9 @@ header {
     font-size: 18px;
 }
 
-/* =============================================
+/* 
    BLOC HORAIRES
-   ============================================= */
+    */
 .horaire {
     width: 27%;
     min-height: 300px;
@@ -296,9 +296,9 @@ header {
     margin-right: 15px;
 }
 
-/* =============================================
+/* 
    BLOC BÉNÉFICES
-   ============================================= */
+    */
 .Description2 {
     width: 70%;
     min-height: 230px;
@@ -343,9 +343,9 @@ header {
     font-family: system-ui, sans-serif;
 }
 
-/* =============================================
+/* 
    BLOC CTA (Prêt à commencer)
-   ============================================= */
+ */
 .horaire2 {
     width: 27%;
     min-height: 300px;
@@ -406,9 +406,9 @@ header {
 .Btn1:hover { background-color: #e6c200; }
 .Btn2:hover { background-color: #333333; }
 
-/* =============================================
+/* 
    FOOTER
-   ============================================= */
+ */
 .foote {
     width: 100%;
     background-color: #121212;
@@ -455,9 +455,9 @@ header {
 }
 
 
-/* =============================================
+/* 
    RESPONSIVE — TABLETTES ET MOBILES (≤ 1024px)
-   ============================================= */
+  */
 @media (max-width: 1024px) {
 
     /* --- HEADER : on active le burger --- */
@@ -602,9 +602,9 @@ header {
 }
 
 
-/* =============================================
+/*
    RESPONSIVE — SMARTPHONES (≤ 600px)
-   ============================================= */
+  */
 @media (max-width: 600px) {
 
     .A {
